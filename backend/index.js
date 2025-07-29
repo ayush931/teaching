@@ -11,19 +11,19 @@ const BACKEND_PORT = process.env.PORT
 
 // register user
 
-app.post("/register", async (req, res) => {
-  const username = req.body.name   // json
-  const useremail = req.body.email
-  const userpassword = req.body.password
+// app.post("/register", async (req, res) => {
+//   const username = req.body.name   // json
+//   const useremail = req.body.email
+//   const userpassword = req.body.password
 
-  await UserModel.create({
-    name: username,
-    email: useremail,
-    password: userpassword
-  })
+//   await UserModel.create({
+//     name: username,
+//     email: useremail,
+//     password: userpassword
+//   })
 
-  res.send("Registration successfull")
-})
+//   res.send("Registration successfull")
+// })
 
 app.listen(BACKEND_PORT, async () => {
   await databaseConnection();
