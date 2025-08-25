@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
-async function databaseConnection() {
-  const connection = await mongoose.connect(process.env.MONGODB_URL)
+async function connectionToDB () {
+  const connection = await mongoose.connect(process.env.MONGO_URI)
 
   if (connection) {
-    console.log("DB is connected")
+    console.log('DB is connected')
   }
   else {
-    console.log("DB is not connected")
+    console.log('DB connection failed!!!')
   }
 }
 
-export default databaseConnection;
+export default connectionToDB;
