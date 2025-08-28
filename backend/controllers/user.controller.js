@@ -97,3 +97,16 @@ export const loginController = async (req, res) => {
     message: 'Logged in successfully'
   })
 }
+
+export const logoutController = async (req, res) => {
+  res.cookie("token", null, {
+    secure: true,
+    httpOnly: true,
+    maxAge: 0
+  });
+
+  return res.status(200).json({
+    success: true,
+    message: 'Logout successfull'
+  })
+}
